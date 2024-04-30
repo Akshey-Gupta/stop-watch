@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@100;400;500&family=Varela+Round&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f0f0f0;
+}
+
+#timer {
+    font-size: 7vw;
+    font-weight: 700;
+    text-shadow: 2px 2px  #a1ceff;
+    text-align: center;
+    color:  #007bff;
+}
+
+button {
+    display: inline-block;
+    padding: 2vw 4vw;
+    margin-right: 1vw;
+    font-size: 2vw;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 5rem;
+    color: #fff;
+    background-color: #007bff;
+    font-weight: 700;    
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 2vw rgba(0, 128, 255, 0.8);
+    }
+    50% {
+        box-shadow: 0 0 4vw rgba(0, 128, 255, 0.8);
+    }
+    100% {
+        box-shadow: 0 0 2vw rgba(0, 128, 255, 0.8);
+    }
+}
+
+button:hover {
+    animation: glow 1s infinite;
+    background-color: #57a8ff;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    #timer {
+        font-size: 5vw;
+        margin-bottom: 4vw;
+    }
+    #buttons{
+        display: flex;
+        flex-direction: column;
+    }
+
+    button {
+        padding: 2vw 4vw;
+        margin-right: 1vw;
+        margin-bottom: 3vw;
+        font-size: 3vw;
+    }
+}
+
+button[disabled]{
+    opacity:0.5;
+    cursor: default;
+    animation: none;
+}
